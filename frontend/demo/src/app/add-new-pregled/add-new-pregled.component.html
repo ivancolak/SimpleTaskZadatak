@@ -1,0 +1,29 @@
+<div class="container">
+    <form
+      [formGroup]="pregledForm"
+      (ngSubmit)="addPregled()"
+    >
+      <div class="form-control">
+        <label for="pacijentId">Pacijent id</label>
+        <input type="text" formControlName="pacijentId" required />
+      </div>
+      <div class="form-group">
+        <label for="trajanje">Trajanje pregleda: 30
+        <input type="radio" value="30" formControlName="trajanje" checked />
+        </label>
+        <label for="trajanje">60
+        <input type="radio" value="60" formControlName="trajanje" checked />
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="vreme"
+          >Datum i vreme(format: YYYY-MM-DDTHH:MM:SS)</label
+        >
+        <input type="text" formControlName="vreme" required />
+      </div>
+      <button type="submit" class="btn btn-success">
+        Dodaj pregled
+      </button>
+    </form>
+  </div>
+  <a [routerLink]="['/zubar']">Nazad</a>

@@ -1,0 +1,28 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Ime zubara</th>
+        <th>Ime pacijenta</th>
+        <th>Vreme</th>
+        <th>Trajanje</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pr of pregledi">
+        <td>{{ pr.id }}</td>
+        <td>{{ pr.zubar.ime }}</td>
+        <td>{{ pr.pacijent.ime }}</td>
+        <td>{{ pr.vreme }}</td>
+        <td>{{ pr.trajanje }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deletePregled(pr)">
+            Obrisi pregled
+          </button>
+        </td>
+      </tr>
+  
+      <td><a [routerLink]="['/zubar']">Nazad</a></td>
+    </tbody>
+  </table>
+  
